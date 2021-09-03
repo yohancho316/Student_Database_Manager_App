@@ -12,6 +12,10 @@ class Entry_Data_Input(ttk.Frame):
   def __init__(self,parent_frame,style,parent_obj):
     super().__init__(parent_frame)
 
+    # Create Button Frame
+    button_frame = ttk.Frame(self)
+    button_frame.grid(row=5,column=1,sticky='EW',columnspan=1)
+
     # TKinter Label Widgets
     title_label = ttk.Label(self,text='Enter Student Information',font=('Arial',25),anchor=CENTER,relief='raised')
     student_id_label = ttk.Label(self,text='Student ID:',font=('Arial',15),anchor=CENTER,relief='raised')
@@ -35,11 +39,11 @@ class Entry_Data_Input(ttk.Frame):
     grade_entry = ttk.Entry(self,textvariable=parent_obj.current_grade)
 
     # TKinter Radio Button Widgets
-    male_button = ttk.Radiobutton(self,text='Male',textvariable=parent_obj.gender,value='Male',width=5)
-    female_button = ttk.Radiobutton(self,text='Female',textvariable=parent_obj.gender,value='Female',width=5)
+    male_button = ttk.Radiobutton(button_frame,text='Male',variable=parent_obj.gender,value='Male',width=8)
+    female_button = ttk.Radiobutton(button_frame,text='Female',variable=parent_obj.gender,value='Female',width=8)
 
     # Insert Label Widgets into Frame
-    title_label.grid(row=0,column=0,sticky='NSEW')
+    title_label.grid(row=0,column=0,sticky='NSEW',columnspan=2,pady=11)
     student_id_label.grid(row=1,column=0,sticky='EW',padx=5,pady=5)
     first_name_label.grid(row=2,column=0,sticky='EW',padx=5,pady=5)
     last_name_label.grid(row=3,column=0,sticky='EW',padx=5,pady=5)
@@ -50,18 +54,19 @@ class Entry_Data_Input(ttk.Frame):
     teacher_id_label.grid(row=8,column=0,sticky='EW',padx=5,pady=5)
     grade_label.grid(row=9,column=0,sticky='EW',padx=5,pady=5)
 
-    # Insert Entry & Radio Button Widgets into Frame
+    # Insert Entry Widgets into Frame
     student_id_entry.grid(row=1,column=1,sticky='EW',padx=5,pady=5)
     first_name_entry.grid(row=2,column=1,sticky='EW',padx=5,pady=5)
     last_name_entry.grid(row=3,column=1,sticky='EW',padx=5,pady=5)
     age_entry.grid(row=4,column=1,sticky='EW',padx=5,pady=5)
-    male_button.grid(row=5,column=1,sticky='W')
-    female_button.grid(row=5,column=2,sticky='E')
     address_entry.grid(row=6,column=1,sticky='EW',padx=5,pady=5)
     mobile_entry.grid(row=7,column=1,sticky='EW',padx=5,pady=5)
     teacher_id_entry.grid(row=8,column=1,sticky='EW',padx=5,pady=5)
     grade_entry.grid(row=9,column=1,sticky='EW',padx=5,pady=5)
 
+    # Insert Radio Button Widgets into Frame
+    male_button.grid(row=0,column=0,sticky='EW')
+    female_button.grid(row=0,column=1,sticky='EW')
 
     # TKinter Label Styling
     style.configure('TLabel',foreground='#e5e5e5')
@@ -69,6 +74,4 @@ class Entry_Data_Input(ttk.Frame):
 
     # TKinter Frame Styling
     style.configure('TFrame',background='#999999')
-
-
 ######################################## TKinter Statements ########################################
