@@ -42,9 +42,9 @@ class student_database_manager(tk.Tk):
     entry_frame = ttk.Frame(notebook)
     entry_frame.grid(row=0,column=0)
 
-    # Entry Title Frame WIdget
+    # Entry Title Frame Widget
     entry_title_frame = Entry.Entry_Title_Frame(entry_frame,style)
-    entry_title_frame.grid(row=0,column=0,sticky='NSEW')
+    entry_title_frame.grid(row=0,column=0,sticky='EW',columnspan=3)
 
     # Entry Data Input Frame Widget
     entry_data_input_frame = Data_Entry.Entry_Data_Input(entry_frame,style,self)

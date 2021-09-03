@@ -13,7 +13,7 @@ class Entry_Title_Frame(ttk.Frame):
     super().__init__(parent)
 
     title_label = ttk.Label(self,text='Student Database Management System',font=('Arial',35),anchor=CENTER,relief='raised')
-    title_label.grid(row=0,column=0,columnspan=2,sticky='NSEW')
+    title_label.grid(row=0,column=0,columnspan=1,sticky='EW')
 
     style.configure('TLabel',foreground='#e5e5e5')
     style.configure('TLabel',background='#66606a')
